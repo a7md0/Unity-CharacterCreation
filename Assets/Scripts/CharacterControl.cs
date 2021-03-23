@@ -33,8 +33,7 @@ public class CharacterControl : MonoBehaviour {
 
         //Rotate body towards movement direction
         if (movement.magnitude != 0) {
-            transform.rotation =
-            Quaternion.LookRotation(new Vector3(movement.x, 0, movement.z));
+            transform.rotation = Quaternion.LookRotation(new Vector3(movement.x, 0, movement.z));
         }
 
         //Finally, change velocity to move body
