@@ -14,6 +14,8 @@ public class CharacterControl : MonoBehaviour {
     private CapsuleCollider capsuleCollider;
     private float height;
 
+    private Animator anim;
+
     // Use this for initialization
     void Start() {
         body = GetComponent<Rigidbody>();
@@ -21,6 +23,8 @@ public class CharacterControl : MonoBehaviour {
 
         capsuleCollider = GetComponent<CapsuleCollider>();
         height = capsuleCollider.height;
+
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -42,6 +46,9 @@ public class CharacterControl : MonoBehaviour {
         //Rotate body towards movement direction
         if (movement.magnitude != 0) {
             transform.rotation = Quaternion.LookRotation(new Vector3(movement.x, 0, movement.z));
+            anim.SetBool("isMoving", true);
+        } else {
+            anim.SetBool("isMoving", false);
         }
 
         float y = body.velocity.y;
