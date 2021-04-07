@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jogSpeed: 10
-  runSpeed: 5
+  runSpeed: 20
   jumpPower: 7
   turnSpeed: 2
 --- !u!4 &587408460 stripped
